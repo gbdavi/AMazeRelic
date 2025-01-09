@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aMaze Relic</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./assets/entities/player/player1_right.png">
+</head>
+<body>
+    <!-- <section id="start-game">Pressione uma tecla para iniciar ...</section> -->
+    <section id="start-game"><input type="text" placeholder="Insira Seu Nome" onchange="Game.playerRegister()"></section>
+    <section id="menu">
+        <div id="forest-menu" class="flex-container-inicio">
+            <header>
+                <div id="title">AMAZE RELIC</div>
+                <div id="subtitle">Encontre a chave e entre no templo</div>
+            </header>
+            <main>
+                <div id="buttons">
+                    <div class="left-buttons">
+                        <div>
+                            <button id="button-start" class="flex-buttons" onclick="Game.start()">
+                                <img src="./assets/img/play_2.png" alt="COMEÇAR">
+                            </button>
+                        </div>
+                        <div>
+                            <button class="buttons" onClick ="Game.showScore()">PLACAR</button>
+                        </div>
+                        <div>
+                            <button class="buttons" onClick ="Game.showHowToPlay()">COMO JOGAR?</button>
+                        </div>
+                    </div>
+                    <div class="right-buttons">
+                        <div>
+                            <button class="buttons" onclick="Game.showForestMenu()">Floresta</button>
+                        </div>
+                        <div>
+                            <button class="buttons" onclick="Game.showTempleMenu()">Templo</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer>*PRESSIONE F11 E UTILIZE FONES DE OUVIDO PARA UMA MAIOR IMERSÃO*</footer>
+        </div>
+        <div id="temple-menu" class="flex-container-inicio">
+            <header>
+                <div id="title">AMAZE RELIC</div>
+                <div id="subtitle">Encontre a relíquia e quebre a maldição</div>
+            </header>
+            <main>
+                <div id="buttons">
+                    <div class="left-buttons">
+                        <div>
+                            <button id="button-start" class="flex-buttons" onclick="Game.start()">
+                                <img src="./assets/img/play_2.png" alt="COMEÇAR">
+                            </button>
+                        </div>
+                        <div>
+                            <button class="buttons" onClick ="Game.showScore()">PLACAR</button>
+                        </div>
+                        <div>
+                            <button class="buttons" onClick ="Game.showHowToPlay()">COMO JOGAR?</button>
+                        </div>
+                    </div>
+                    <div class="right-buttons">
+                        <div>
+                            <button class="buttons" onclick="Game.showForestMenu()">Floresta</button>
+                        </div>
+                        <div>
+                            <button class="buttons" onclick="Game.showTempleMenu()">Templo</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer>*PRESSIONE F11 E UTILIZE FONES DE OUVIDO PARA UMA MAIOR IMERSÃO*</footer>
+        </div>
+        <div id="modal"></div>
+    </section>
+    <section id="game">
+        <canvas id="game-canvas">
+            <h1>O Canvas não é suportado em seu navegador! :(</h1>
+        </canvas>
+    </section>
+    <script type="text/javascript" src="./Models.js"></script>
+    <script type="text/javascript" src="./assets/maps/scenery.js"></script>
+    <script type="text/javascript" src="./assets/maps/forest.js"></script>
+    <script type="text/javascript" src="./assets/maps/temple.js"></script>
+    <script type="text/javascript" src="./entities.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+</html>

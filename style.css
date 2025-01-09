@@ -1,0 +1,470 @@
+
+@font-face {
+    font-family: Mayan;
+    src: url('./assets/fonts/Mayan.ttf');
+}
+
+body {
+    position: relative;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: #222222;
+    overflow: hidden;
+    justify-content: center;
+    /* cursor: none; */
+    user-select: none;
+}
+
+body > section {
+    display: flex;
+    position: absolute;
+    top: 0;
+    /* left: 0; */
+}
+
+#start-game {
+    position: absolute;
+    display: flex;
+    width: 100vw;
+    top: 50%;
+    transform: translateY(-50%);
+    justify-content: center;
+    font-size: 90px;
+    color: white;
+}
+
+#start-game input {
+    width: 40vw;
+    height: 20px;
+    padding: 10px;
+    border: 10px #1d1d1d solid;
+    border-radius: 5px;
+    color: white;
+    background: gray;
+}
+
+#start-game input::placeholder {
+    color: lightgray;
+}
+
+#start-game input:focus {
+    outline: none;
+}
+
+#game {
+    visibility: hidden;
+}
+
+#game-canvas {
+    display: flex;
+    width: 1364px;
+    height: 766px;
+    margin: auto;
+    border: 1px solid #222222;
+    cursor: none;
+}
+
+
+#menu {
+    position: relative;
+    visibility: hidden;
+    font-family: Mayan; 
+}
+
+#modal {
+    display: flex;
+    min-width: 1366px;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    /* left: 0; */
+    visibility: hidden;
+    background: white;
+}
+
+#forest-menu {
+    background-color: black;
+    background-image: url('./assets/img/cenary_2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#temple-menu {
+    display: none;
+    background-color: black;
+    background-image: url('./assets/img/temple.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*INICIO*/
+.flex-container-inicio {
+    position: relative;
+    flex-direction: row-reverse;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+#menu header {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    /* left: 0; */
+    display: flex;
+    width: 100vw;
+    margin:  10vh auto auto auto;
+    flex-direction: row;
+    font-size: 110px;
+    color: aliceblue;
+    text-align: center;
+}
+
+header #subtitle{
+    margin:  2vh auto auto auto;
+    font-size: 50px;
+    background-color: aliceblue;
+    font-family: Mayan;
+    color: black;
+}
+
+.flex-container-inicio main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+#buttons {
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+    margin-top: 35vh;
+}
+
+#buttons > button:hover{
+    background-color: rgba(255, 255, 255, 0.432);
+}
+
+#buttons .left-buttons {
+    position: absolute;
+    left: 2vw;
+}
+
+#buttons .right-buttons {
+    position: absolute;
+    right: 2vw;
+    margin-top: 17vh;
+}
+
+
+#forest-menu #buttons .right-buttons > :first-child {
+    opacity: .6;
+}
+
+#temple-menu #buttons .right-buttons > :last-child {
+    opacity: .6;
+}
+
+
+#buttons > div > div {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.buttons{
+    width: 15vw;
+    height: 7vh;
+    border-radius: 50px;
+    border-color: transparent;
+    font-size: 25px;
+    font-family: Mayan;
+    cursor: pointer;
+}
+
+.buttons:hover {
+    opacity: .8;
+}
+
+#button-start{
+    width: 12vh;
+    height: 12vh;
+    border-radius: 200px;
+    cursor: pointer;
+}
+
+#button-start img{
+    background-color: transparent;
+    height: 8vh;
+    margin: 15%;
+}
+
+/*COMO JOGAR*/
+#flex-container-como-jogar{
+    background-image: url("./assets/img/cenary_3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+#flex-container-como-jogar .header {
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 6vh 0;
+    height: 17vh;
+    width: 100vw;
+}
+
+
+
+#subtitle{
+    font-size: 60px;
+    width: 100vw;
+    margin-top: -3vh;
+    text-align: center;
+}
+
+.come-back{
+    background-color: transparent;
+    border: 0px;
+    margin-left:  2.5vw;
+    margin-top: -12vh;
+}
+
+.come-back img{
+    height: 6vh;
+    width: 6vh;
+    border-radius: 50%;
+}
+
+.come-back > img:hover{
+    background-color: rgb(121, 141, 33);
+    cursor: pointer;
+}
+
+#flex-container-card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: auto;
+    margin-left: 7vw;
+}
+
+.flex-item-border{
+    border-radius: 15px;
+    min-width: 180px;
+    width: 14vw;
+    height: 36vh;
+    margin-left: 5vw;
+    box-shadow: -1px 3px 5px 0.5px rgba(240, 240, 240, 0.4);
+    padding: 5px;
+    position: relative;
+    background: linear-gradient(to right, #497536, #99F771);
+}
+
+.flex-box-card{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+    width: 14vw;
+    height: 36vh;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 1%;
+}
+
+.flex-item-image{
+    height: 50%;
+    width: 100%;
+}
+
+.flex-item-image img{
+    height: 100%;
+    width: auto;
+    margin-left: 16%;
+    margin-top: 2%;
+}
+
+.flex-item-explication{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    font-family: monospace;
+    font-size: 15px;
+    height: 50%;
+    margin: auto;
+}
+
+.flex-item-explication p{
+    font-size: 11px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+#border-relic{
+    margin-top: 5vh;
+    margin-left: 12vw;
+    width: 60vw;
+    height: 25vh;
+}
+
+#relic{
+    flex-direction: row;
+    margin: auto;
+    width: 60vw;
+    height: 25vh;
+}
+
+#relic .flex-item-image{
+    width: 20vw;
+    height: 100%;
+} 
+
+#relic .flex-item-image img{
+    width: auto;
+    height: 90%;
+    margin-top: 3%;
+    margin-left: 30%;
+} 
+
+#relic .flex-item-explication{
+    width: 40vw;
+}
+
+#relic p{
+    font-size: 40px;   
+    font-family: Mayan;
+    text-align: center;
+    margin-top: 3%;
+}
+
+/*PLACAR*/
+#flex-container-score{
+    width: 100vw;
+    height: 200vh;
+    background-image: url("./assets/img/cenary.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    margin-top: -25vh;
+}
+
+#header-score{
+    height: 8vh;
+    width: 8vh;
+    margin-top: 26vh;
+    margin-left: 2vw;
+    background-color: aliceblue;
+    border-radius: 30px;
+}
+
+.come-back img{
+    margin-top: 13vh;
+    margin-left: -2.3vw;
+}
+
+#border-score {
+    width: 60%;
+    height: 40%;
+    margin-left: 20vw;
+}
+
+#flex-container-table{
+    background-color: aliceblue;
+    box-sizing: border-box;
+    width: 99%;
+    height: 99%;
+    margin-left: 0.5%;
+    margin-top: 0.5%;
+    padding-bottom: 2vh;
+    border-radius: 15px;
+    overflow-y: scroll;
+}
+
+#flex-container-table table{
+    width: 90%;
+    height: 90%;
+    margin-left: 5%;
+    border-collapse: collapse;
+}
+
+#score-subtitle{
+    font-size: 50px;
+    margin-top: -30px;
+    width: 100%;
+    height: 15vh;
+    text-align: center;
+}
+
+th{
+    background-color:  rgb(196, 196, 196);
+    border: 2px solid rgb(196, 196, 196);  
+    height: 5vh;  
+}
+
+th, td{
+    text-align: center;
+}
+
+td{
+    border-bottom: 2px solid rgb(196, 196, 196);  
+    font-size: 18px;
+    border-right-color: transparent;
+    height: 4vh;
+}
+
+.posicao{
+    border-left: 2px solid rgb(196, 196, 196); 
+}
+
+.tempo{
+    border-right: 2px solid rgb(196, 196, 196); 
+}
+
+#modal tbody > :nth-child( -n + 10 ) td {
+    font-weight: bold;
+    color: rgb(89, 89, 90);
+}
+
+#modal tbody > :nth-child( -n + 3 ) td {
+    font-weight: bold;
+    color: green;
+}
+
+/*History*/
+
+#flex-container-history{
+    background-color: aqua;
+    margin-top: -30vh;
+}
+
+#gif{
+    width: 130vh;
+    height: 130vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#history-text{
+    background-color: yellowgreen;
+}
+
+footer {
+    width: 100vw;
+    height: 80px;
+    text-align: center;
+    margin-top: -80px;
+    font-size: 24px;
+    font-family: sans-serif;
+    color: white;
+}
+

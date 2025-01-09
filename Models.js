@@ -217,8 +217,7 @@ class Chunk extends SceneryObject {
 		}
 		this.bgColor("white");
 		this.fill(false);
-		this.active = false; // Default
-		// this.active = true;
+		this.active = false;
 		this.showBorder = false;
 	}
 

@@ -188,17 +188,7 @@ class Player extends Entity {
 
 	move(x, y) {
 		for (let i = 4; i < container.elements[0].shapes.length; i++) {
-			// if (Utils.inRangeX(player, 0, container.elements[0].shapes[i]) && Utils.inRangeY(player, 0, container.elements[0].shapes[i])) {
-			// let chunk = container.elements[0].shapes[i];
-			// if (
-			// 	( Utils.inRangeX(player, -visionFieldSize / 2, chunk) || Utils.inRangeX(player, visionFieldSize / 2, chunk))
-			// 	&&
-			// 	( Utils.inRangeY(player, -visionFieldSize / 2, chunk) || Utils.inRangeY(player, visionFieldSize / 2, chunk))
-			// ) {
-				container.elements[0].shapes[i].active = true;
-			// } else {
-			// 	container.elements[0].shapes[i].active = false;
-			// }
+			container.elements[0].shapes[i].active = true;
 		}
 		let correction = Utils.colisionVerify( player, x, y, container.elements[0].shapes);
 		if (y > 0 && y != correction.y) {
@@ -228,7 +218,6 @@ class Player extends Entity {
 		this.animSprite++;
 		this.animPart = 2;
 		if (this.animSprite == 6) {
-			// this.animPart = 0;
 			this.animSprite = 0;
 		}
 	}
@@ -363,25 +352,12 @@ class Mummy extends Entity {
 			this.faceRight = true; 
 		}
 
-		// if (!this.onAnimation) {
-		// 	this.onAnimation = true;
-		// 	this.animSprite = 0;
-		// 	this.next()
-		// 	setTimeout( () => {this.next()}, 100);
-		// 	setTimeout( () => {this.next()}, 200);
-		// 	setTimeout( () => {
-		// 		this.next();
-		// 		this.onAnimation = false;
-		// 	}, 300);
-		// }
 		this.move(this.hSpeed, this.vSpeed);
 	}
 
 	move(x, y) {
 		let correction = Utils.colisionVerify( this, x, y, container.elements[0].shapes, true );
 		super.move(correction.x, correction.y);
-		// let fallDetect = Utils.colisionVerify(this, -this.style.width, 1, container.elements[0].shapes, true );
-		// if (x != correction.x || fallDetect.y != 0 ) {
 		if (x != correction.x) {
 			this.hSpeed = -this.hSpeed;
 		}
@@ -390,11 +366,7 @@ class Mummy extends Entity {
 		}
 	}
 
-	next() {		
-		// this.animSprite++;
-		// if (this.animSprite == 1) {
-		// 	this.animSprite = 0;
-		// }
+	next() {
 	}
 }
 
@@ -467,8 +439,6 @@ class Snake extends Entity {
 	move(x, y) {
 		let correction = Utils.colisionVerify( this, x, y, container.elements[0].shapes, true );
 		super.move(correction.x, correction.y);
-		// let fallDetect = Utils.colisionVerify(this, -this.style.width, 1, container.elements[0].shapes, true );
-		// if (x != correction.x || fallDetect.y != 0 ) {
 		if (x != correction.x) {
 			this.hSpeed = -this.hSpeed;
 		}
@@ -540,7 +510,6 @@ class TempleDoor extends Entity {
 	constructor(x, y) {
 		super(x, y, 150, 48);
 		{
-			// this.sprites.push( new Img("./assets/entities/temple/temple.png", this.x, this.y, this.style.width, this.style. height) );
 			this.sprites.push( new Rectangle(this.x, this.y, this.style.width, this.style. height, "transparent") );
 			let warning = new CText("Pegue a chave antes", this.x, this.y + this.style.height/2, this.style.width, this.style.height)
 			warning.color("white");

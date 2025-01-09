@@ -1,16 +1,11 @@
 
-// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
-
 // Canvas Configs
 let cWidth = 1364;
 let cHeight = 766;
 let bgColor = "transparent";
-// let bgColor = "#2222ee";
-// let bgColor = "#cfeeff";
 let container = new Canvas("game-canvas", cWidth, cHeight, bgColor, "2d");
 let frameRate = 30;
-// let fitScreen = false; // false for development
-let fitScreen = true; // true for test and play
+let fitScreen = true;
 if (fitScreen) {
 	document.querySelector("#game").style.zoom = window.innerWidth / cWidth;
 }
@@ -19,7 +14,6 @@ let fallSpeedLimit = 20;
 let gravityOn = true;
 let player;
 let visionFieldSize = 450;
-// let visionFieldSize = 350;
 
 let Sounds = {
 	menu: new Sound("./assets/sounds/menu/Musica Menu (Ringside - Dyalla).mp3", .5),
@@ -89,11 +83,8 @@ let Sounds = {
 const Game = {
 
 	playerName:"rootadm",
-	// scoreMap1:0,
-	// scoreMap2:0,
 	scoreMap1:undefined,
 	scoreMap2:undefined,
-	// currentMap:"Jungle",
 	currentMap:"Forest",
 
 	start() {
@@ -394,7 +385,6 @@ const Utils = {
 			case "jungle": {
 				container.elements = [];
 				let map = getJungleMap();
-				// map.move(-cWidth, 300);
 				container.elements.push( map );
 				container.elements.push( new StaticGadgets() );
 				Utils.clockStart();
@@ -519,7 +509,6 @@ const Utils = {
 				if (yIncrease != 0) {
 					for (let i = 0; i < chunk.shapes.length; i++) {
 						// Caso o objeto esteja na mesma coluna da entidade (player)
-						// if ( Utils.inRangeX(elem, 0, chunk.shapes[i]) ) {
 						if ( Utils.inRangeX(elem, correction.x, chunk.shapes[i]) ) {
 							// Se o incremento for positivo
 							if ( yIncrease > 0 ) {	
@@ -671,8 +660,6 @@ const Storage = {
 }
 
 let Controls = {
-
-	// mode: "player",
 	mode: "menu",
 	walking_left: false,
 	walking_right: false,
@@ -705,12 +692,6 @@ let Controls = {
 					Sounds.player.jump();
 					break;
 				}
-				// case "arrowdown": {
-				// 	if (!player.isJumping) {
-				// 		player.vSpeed = 20;
-				// 	}
-				// 	break;
-				// }
 				case "arrowleft": {
 					player.left();
 					Controls.walking_left = true;
@@ -767,10 +748,6 @@ let Controls = {
 					Controls.walking_right = false;
 					break;
 				}
-				// case "arrowdown": {
-				// 	player.vSpeed = 0; 
-				// 	break;
-				// }
 				case "a": {
 					if (!Controls.walking_right) {
 						player.hSpeed = 0;
